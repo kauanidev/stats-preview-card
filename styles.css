@@ -1,0 +1,161 @@
+:root {
+
+    --darkblue: #090b1a;
+    --mediumblue: #1b1938;
+    --purple: #aa5cdb;
+    --white: #ffffff;
+    --blue: #98a6bd;
+    --white: #ffffff;
+}
+
+* {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--darkblue);
+    background-image: url("./images/texture.png");
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 1200px;
+    background: var(--mediumblue);
+    border-radius: 10px;
+}
+
+main .texts {
+    padding: 70px;
+    margin-right: 50px;
+    display: grid;
+}
+
+.texts > h1 {
+    color: var(--white);
+    font-size: 32px;
+    margin-bottom: 30px;
+    margin-right: 50px;
+}
+
+.texts > h1 span {
+    color: var(--purple);
+}
+
+.texts > p {
+    color: var(--white);
+    opacity: 0.6;
+    line-height: 25px;
+    margin-bottom: 70px;
+    font-size: 14px;
+    margin-right: 80px;
+}
+
+.bottom {
+    display: flex;
+    gap: 60px;
+}
+
+.bottom h1 {
+    color: var(--white);
+}
+
+.bottom span {
+    color: var(--white);
+    opacity: 0.5;
+    font-family: 'Lexend Deca';
+    font-size: 12px;
+}
+
+.image {
+    overflow: hidden;
+    position: relative;
+    opacity: 0.5;
+    border-radius: 0 10px 10px 0;
+    background: url(./images/image-header-desktop.jpg) no-repeat;
+    background-size: cover;
+}
+
+.image:after {
+    content:'';
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    background-color:var(--purple);
+    opacity: 0.6;
+    object-fit: cover;
+    border-radius: 0 10px 10px 0;
+    mix-blend-mode: color;
+}
+
+
+
+@media(max-width:1200px) {
+    main {
+        width: 1000px;
+    }
+}
+
+@media(max-width:1000px) {
+    main {
+        grid-template-columns: 1fr;
+        width: 100%;
+        text-align: center;
+    }
+
+    .bottom {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .image {
+        height: 300px;
+        grid-row: 1;
+        border-radius: 0;
+    }
+
+    .image::after {
+        border-radius: 0;
+    }
+
+    main .texts {
+        grid-row: 2;
+        margin-right: 0;
+        padding: 30px;
+    }
+
+    body {
+        height: auto;
+        padding: 40px;
+    }
+
+    .texts > p , .texts > h1 {
+        margin-right: 0;
+    }
+
+    .texts > p {
+        margin-bottom: 20px;
+    }
+}
+
+@media(max-width:400px) {
+    body {
+        padding: 15px;
+    }
+}
